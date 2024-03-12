@@ -1,4 +1,4 @@
-public class MovieRental {
+public class MovieRental {/*
     private String movieId;
     private int days;
 
@@ -13,5 +13,5 @@ public class MovieRental {
 
     public int getDays() {
         return days;
-    }
+    }*/
 }
