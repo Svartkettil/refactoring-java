@@ -5,12 +5,6 @@ import java.util.List;
 public class RentalInfo {
 
   public String statement(Customer customer) {
-    List<Movie> movies = new ArrayList<>();
-    movies.add(new Movie("F001", "You've Got Mail", "regular", 3));
-    movies.add(new Movie("F002", "Matrix", "regular", 1));
-    movies.add(new Movie("F003", "Cars", "childrens", 4));
-    movies.add(new Movie("F004", "Fast & Furious", "new", 2));
-
     /*HashMap<String, Movie> movies = new HashMap();
     movies.put("F001", new Movie("You've Got Mail", "regular"));
     movies.put("F002", new Movie("Matrix", "regular"));

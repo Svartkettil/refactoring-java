@@ -1,14 +1,27 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Movie {
-    private String id;
     private String title;
     private String code;
-    private int days;
+    private Integer days;
+    private static Map<String, Movie> movies = new HashMap<>();
 
-    public Movie(String id, String title, String code, int days) {
-        this.id = id;
+    public Movie(String id, String title, String code, Integer days) {
         this.title = title;
         this.code = code;
         this.days = days;
+    }
+
+    public Movie() {
+    }
+
+    public Movie pickMovie(String id, Integer days){
+        movies.put("F001", new Movie(id, "You've Got Mail", "regular", days));
+        movies.put("F002", new Movie(id, "Matrix", "regular", days));
+        movies.put("F003", new Movie(id, "Cars", "childrens", days));
+        movies.put("F004", new Movie(id, "Fast & furious", "new", days));
+        return this;
     }
 
     public String getTitle() {
@@ -19,27 +32,8 @@ public class Movie {
         return code;
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public int getDays() {
+    public Integer getDays() {
         return days;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public void setDays(int days) {
-        this.days = days;
     }
 }
