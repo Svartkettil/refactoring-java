@@ -1,10 +1,8 @@
 public class MovieRental {
-    private String movieId;
     private int days;
     private Movie movie;
 
-    public MovieRental(String movieId, int days, Movie movie) {
-        this.movieId = movieId;
+    public MovieRental(int days, Movie movie) {
         this.days = days;
         this.movie = movie;
     }
@@ -13,7 +11,7 @@ public class MovieRental {
     }
 
     public MovieRental pickMovie(String id, int days){
-        return new MovieRental(id, days, MovieLibrary.getMovieFromLibrary(id));
+        return new MovieRental(days, MovieLibrary.getMovieFromLibrary(id));
 
     }
     public int getDays() {
