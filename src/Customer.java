@@ -2,6 +2,16 @@ import java.util.List;
 
 public class Customer {
     private final String name;
+    private int frequenEnterPoints;
+
+    public int getFrequenEnterPoints() {
+        return frequenEnterPoints;
+    }
+
+    public void setFrequenEnterPoints(int frequenEnterPoints) {
+        this.frequenEnterPoints += frequenEnterPoints;
+    }
+
     List<MovieRental> rentals;
 
 

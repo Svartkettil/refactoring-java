@@ -1,6 +1,5 @@
 
 public class RentalInfo {
-    static int frequentEnterPoints = 0;
 
   public String statement(Customer customer) {
     double totalAmount = 0;
@@ -10,22 +9,22 @@ public class RentalInfo {
           double thisAmount = getAmount(rental);
           //add frequent bonus points
           // add bonus for a two day new release rental
-          addFrequentPoints(rental);
+          addFrequentPoints(customer, rental);
           //print figures for this rental
           result.append("\t").append(rental.getMovie().getTitle()).append("\t").append(thisAmount).append("\n");
           totalAmount += thisAmount;
       }
     // add footer lines
     result.append("Amount owed is ").append(totalAmount).append("\n");
-    result.append("You earned ").append(frequentEnterPoints).append(" frequent points\n");
+    result.append("You earned ").append(customer.getFrequenEnterPoints()).append(" frequent points\n");
 
     return result.toString();
   }
 
-    private void addFrequentPoints(MovieRental rental) {
-      frequentEnterPoints++;
+    private void addFrequentPoints(Customer customer, MovieRental rental) {
+      customer.setFrequenEnterPoints(1);
         if (rental.getMovie().getCode().equals("new") && rental.getDays() > 2)
-            frequentEnterPoints++;
+            customer.setFrequenEnterPoints(1);
     }
 
     public double getAmount(MovieRental rental){
