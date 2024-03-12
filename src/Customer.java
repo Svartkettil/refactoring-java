@@ -1,11 +1,12 @@
 import java.util.List;
+import java.util.Map;
 
 public class Customer {
     private final String name;
     //private List<MovieRental> rentals;
-    private List<Movie> movies;
+    private Map<String, Movie> movies;
 
-    public Customer(String name, List<Movie> rentals) {
+    public Customer(String name, Map<String, Movie> rentals) {
         this.name = name;
         this.movies = rentals;
     }
@@ -18,11 +19,7 @@ public class Customer {
         return rentals;
     }*/
 
-    public List<Movie> getMovies() {
+    public Map<String, Movie> getMovies() {
         return movies;
-    }
-
-    public void setMovies(List<Movie> movies) {
-        this.movies = movies;
     }
 }
