@@ -6,25 +6,8 @@ public class RentalInfo {
     int frequentEnterPoints = 0;
     String result = "Rental Record for " + customer.getName() + "\n";
       for (MovieRental rental : customer.getRentals()) {
-          double thisAmount = 0;
-
           // determine amount for each movie
-          if (rental.getMovie().getCode().equals("regular")) {
-              thisAmount = 2;
-              if (rental.getDays() > 2) {
-                  thisAmount = ((rental.getDays() - 2) * 1.5) + thisAmount;
-              }
-          }
-          if (rental.getMovie().getCode().equals("new")) {
-              thisAmount = rental.getDays() * 3;
-          }
-          if (rental.getMovie().getCode().equals("childrens")) {
-              thisAmount = 1.5;
-              if (rental.getDays() > 3) {
-                  thisAmount = ((rental.getDays() - 3) * 1.5) + thisAmount;
-              }
-          }
-
+          double thisAmount = getAmount(rental);
           //add frequent bonus points
           frequentEnterPoints++;
           // add bonus for a two day new release rental
@@ -39,5 +22,26 @@ public class RentalInfo {
     result += "You earned " + frequentEnterPoints + " frequent points\n";
 
     return result;
+  }
+  public double getAmount(MovieRental rental){
+      double thisAmount = 0;
+      if (rental.getMovie().getCode().equals("regular")) {
+          thisAmount = 2;
+          if (rental.getDays() > 2) {
+              thisAmount = ((rental.getDays() - 2) * 1.5) + 2;
+          }
+          return thisAmount;
+      }
+      if (rental.getMovie().getCode().equals("new")) {
+          return rental.getDays() * 3;
+      }
+      if (rental.getMovie().getCode().equals("childrens")) {
+          thisAmount = 1.5;
+          if (rental.getDays() > 3) {
+              thisAmount = ((rental.getDays() - 3) * 1.5) + 1.5;
+          }
+          return thisAmount;
+      }
+      return thisAmount;
   }
 }
