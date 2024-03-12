@@ -14,33 +14,33 @@ public class RentalInfo {
     double totalAmount = 0;
     int frequentEnterPoints = 0;
     String result = "Rental Record for " + customer.getName() + "\n";
-      for (Movie movie : customer.getMovies().values()) {
+      for (MovieRental rental : customer.getRentals()) {
           double thisAmount = 0;
 
           // determine amount for each movie
-          if (movie.getCode().equals("regular")) {
+          if (rental.getMovie().getCode().equals("regular")) {
               thisAmount = 2;
-              if (movie.getDays() > 2) {
-                  thisAmount = ((movie.getDays() - 2) * 1.5) + thisAmount;
+              if (rental.getDays() > 2) {
+                  thisAmount = ((rental.getDays() - 2) * 1.5) + thisAmount;
               }
           }
-          if (movie.getCode().equals("new")) {
-              thisAmount = movie.getDays() * 3;
+          if (rental.getMovie().getCode().equals("new")) {
+              thisAmount = rental.getDays() * 3;
           }
-          if (movie.getCode().equals("childrens")) {
+          if (rental.getMovie().getCode().equals("childrens")) {
               thisAmount = 1.5;
-              if (movie.getDays() > 3) {
-                  thisAmount = ((movie.getDays() - 3) * 1.5) + thisAmount;
+              if (rental.getDays() > 3) {
+                  thisAmount = ((rental.getDays() - 3) * 1.5) + thisAmount;
               }
           }
 
           //add frequent bonus points
           frequentEnterPoints++;
           // add bonus for a two day new release rental
-          if (movie.getCode().equals("new") && movie.getDays() > 2) frequentEnterPoints++;
+          if (rental.getMovie().getCode().equals("new") && rental.getDays() > 2) frequentEnterPoints++;
 
           //print figures for this rental
-          result += "\t" + movie.getTitle() + "\t" + thisAmount + "\n";
+          result += "\t" + rental.getMovie().getTitle() + "\t" + thisAmount + "\n";
           totalAmount = totalAmount + thisAmount;
       }
     // add footer lines

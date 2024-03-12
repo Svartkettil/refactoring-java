@@ -3,23 +3,17 @@ import java.util.Map;
 
 public class Customer {
     private final String name;
-    //private List<MovieRental> rentals;
-    private Map<String, Movie> movies;
+    List<MovieRental> rentals;
 
-    public Customer(String name, Map<String, Movie> rentals) {
+
+    public Customer(String name,  List<MovieRental> rentals) {
         this.name = name;
-        this.movies = rentals;
+        this.rentals = rentals;
     }
-
     public String getName() {
         return name;
     }
-
-    /*public List<MovieRental> getRentals() {
+    public List<MovieRental> getRentals() {
         return rentals;
-    }*/
-
-    public Map<String, Movie> getMovies() {
-        return movies;
     }
 }
