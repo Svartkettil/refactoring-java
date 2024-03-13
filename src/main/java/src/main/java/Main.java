@@ -1,3 +1,5 @@
+package src.main.java;
+
 import java.util.Arrays;
 
 public class Main {
@@ -8,8 +10,8 @@ public class Main {
     String expected = "Rental Record for C. U. Stomer\n\tLord of the ring\t3.5\n\tMatrix\t2.0\nAmount owed is 5.5\nYou earned 2 frequent points\n";
     String result0 = new RentalInfo().statement(new Customer("C. U. Stomer",
             Arrays.asList(
-                    rentMovie.pickMovie("F001", 3),
-                    rentMovie.pickMovie("F002", 2)
+                    rentMovie.pickMovie("F001", 1),
+                    rentMovie.pickMovie("F004", 1)
             )));
 
     if (!result0.equals(expected)) {

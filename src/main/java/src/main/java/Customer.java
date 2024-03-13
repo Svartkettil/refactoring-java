@@ -1,3 +1,5 @@
+package src.main.java;
+
 import java.util.List;
 
 public class Customer {
@@ -12,9 +14,6 @@ public class Customer {
     public void setFrequentEnterPoints(int frequentEnterPoints) {
         this.frequentEnterPoints += frequentEnterPoints;
     }
-
-
-
     public Customer(String name,  List<MovieRental> rentals) {
         this.name = name;
         this.rentals = rentals;

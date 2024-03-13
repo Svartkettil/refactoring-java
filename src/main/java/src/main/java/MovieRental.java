@@ -1,3 +1,5 @@
+package src.main.java;
+
 public class MovieRental {
     private int days;
     private Movie movie;
