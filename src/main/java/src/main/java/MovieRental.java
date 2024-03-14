@@ -1,8 +1,8 @@
 package src.main.java;
 
 public class MovieRental {
-    private int days;
-    private Movie movie;
+    private final int days;
+    private final Movie movie;
 
     public MovieRental(int days, Movie movie) {
         this.days = days;
