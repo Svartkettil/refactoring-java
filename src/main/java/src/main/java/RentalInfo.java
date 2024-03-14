@@ -32,7 +32,7 @@ public class RentalInfo {
       }
     }
 
-    public double getAmount(MovieRental rental){
+    private double getAmount(MovieRental rental){
       double thisAmount = 0;
       if (rental.getDays() == 0)
           return thisAmount;
