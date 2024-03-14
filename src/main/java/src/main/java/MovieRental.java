@@ -9,13 +9,7 @@ public class MovieRental {
         this.movie = movie;
     }
 
-    public MovieRental() {
-    }
 
-    public MovieRental pickMovie(String id, int days){
-        return new MovieRental(days, MovieLibrary.getMovieFromLibrary(id));
-
-    }
     public int getDays() {
         return days;
     }

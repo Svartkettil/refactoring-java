@@ -14,7 +14,7 @@ public class Customer {
     public void setFrequentEnterPoints(int frequentEnterPoints) {
         this.frequentEnterPoints += frequentEnterPoints;
     }
-    public Customer(String name,  List<MovieRental> rentals) {
+    public Customer(String name, List<MovieRental> rentals) {
         this.name = name;
         this.rentals = rentals;
     }
@@ -23,5 +23,11 @@ public class Customer {
     }
     public List<MovieRental> getRentals() {
         return rentals;
+    }
+    public void pickMovie(String id, int days) {
+        if (MovieLibrary.getMovieFromLibrary(id) != null) {
+                rentals.add(new MovieRental(days, MovieLibrary.getMovieFromLibrary(id)));
+        }
+
     }
 }

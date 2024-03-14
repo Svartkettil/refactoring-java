@@ -3,6 +3,8 @@ package src.main.java;
 public class RentalInfo {
 
   public String statement(Customer customer) {
+      if (customer.getRentals().isEmpty() )
+          return "Please enter the id of the movie";
     double totalAmount = 0;
     StringBuilder result = new StringBuilder("Rental Record for " + customer.getName() + "\n");
       for (MovieRental rental : customer.getRentals()) {
@@ -14,7 +16,6 @@ public class RentalInfo {
                   .append("\n");
           totalAmount += thisAmount;
       }
-    // add footer lines
     result.append("Amount owed is ").append(totalAmount).append("\n");
     result.append("You earned ").append(customer.getFrequentEnterPoints()).append(" frequent points\n");
 
